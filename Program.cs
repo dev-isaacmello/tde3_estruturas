@@ -17,6 +17,7 @@ do
     switch (option)
     {
         case 1:
+            Console.Clear();
             Console.WriteLine($"seu saldo é: R${saldo:F2}");
             break;
         case 2:
@@ -25,11 +26,13 @@ do
             if (deposito < 0 || deposito > 1000000)
             {
                 Console.WriteLine("Depósito inválido. O valor deve ser positivo.");
+                Console.Clear();
                 continue;
             }
 
             saldo += deposito;
             Console.WriteLine($"feito, teu novo saldo é {saldo:F2}");
+            Console.Clear();
             break;
         case 3:
             Console.WriteLine("Quanto tu quer sacar? ");
@@ -43,13 +46,14 @@ do
                 saldo -= saque;
                 Console.WriteLine($"Saque realizado com sucesso! Teu novo saldo é {saldo:F2}");
             }
-
+            Console.Clear();
             break;
         case 0:
             Console.WriteLine("Obrigado por usar o caixa tchê! Até logo!");
             break;
         default:
             Console.WriteLine("Opção inválida. Tente novamente.");
+            Console.Clear();
             continue;
     }
 } while (option != 0);
